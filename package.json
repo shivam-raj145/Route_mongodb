@@ -1,8 +1,27 @@
 {
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivam-raj145/Route_mongodb.git"
+  },
   "dependencies": {
     "dotenv": "^17.4.0",
     "ejs": "^5.0.1",
     "express": "^5.2.1",
     "mongoose": "^9.4.1"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivam-raj145/Route_mongodb/issues"
+  },
+  "homepage": "https://github.com/shivam-raj145/Route_mongodb#readme"
 }
