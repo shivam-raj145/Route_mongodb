@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Grid Layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Image */
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4CAF50;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.name {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.email {
+  font-size: 14px;
+  color: #777;
+}
+
+.dob {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.edit-btn {
+  background: #4CAF50;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

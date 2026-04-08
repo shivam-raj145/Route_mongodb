@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="/stylesheet/index.css">
+</head>
+<body>
+
+
+           <%for(user of users){%>
+            
+      <div class="container">
+  <% users.forEach(user => { %>
+    <div class="card">
+
+      <img src="<%= user.img || 'https://via.placeholder.com/120' %>"class="profile-img">
+
+      <h2 class="name"><%= user.name %></h2>
+      <p class="email"><%= user.email %></p>
+      <p class="dob">DOB: <%= user.birth %></p>
+
+      <div class="actions">
+        <form action="/edit/<%= user._id %>" method="get">
+          <button class="delete-btn">edit_user</button>
+        </form>
+
+        <form action="/delete/<%= user._id%>" method="get">
+          <button class="delete-btn">Delete</button>
+        </form>
+      </div>
+
+    </div>
+  <% }) %>
+</div>
+          <% }%>
+
+
+</body>
+</html>
