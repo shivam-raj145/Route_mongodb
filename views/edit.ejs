@@ -13,10 +13,10 @@
   <h2>you are going to edit </h2>
   <p><%=user.email%></p>
 
-  <form action="/user/<%=user.userId%>/?_method=patch" method="post">
+  <form action="/user/<%=user._id%>/?_method=patch" method="post">
     <div class="input-field">
       <i>👤</i>
-      <input type="text" placeholder="<%=user.username%>" name="username" required>
+      <input type="text" placeholder="<%=user.name%>" name="username" required>
     </div>
 
     <div class="input-field">

@@ -6,9 +6,6 @@
   <link rel="stylesheet" href="/stylesheet/index.css">
 </head>
 <body>
-
-
-           <%for(user of users){%>
             
       <div class="container">
   <% users.forEach(user => { %>
@@ -21,7 +18,7 @@
       <p class="dob">DOB: <%= user.birth %></p>
 
       <div class="actions">
-        <form action="/edit/<%= user._id %>" method="get">
+        <form action="/user/<%= user._id %>/edit" method="get">
           <button class="delete-btn">edit_user</button>
         </form>
 
@@ -33,7 +30,6 @@
     </div>
   <% }) %>
 </div>
-          <% }%>
 
 
 </body>
