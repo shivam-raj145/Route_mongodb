@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editing user detail</title>
+    <link rel="stylesheet" href="/stylesheet/edit.css">
+</head>
+<body>
+        
+    <div class="login-container">
+  <div class="profile-img"></div>
+  <h2>you are going to edit </h2>
+  <p><%=user.email%></p>
+
+  <form action="/user/<%=user.userId%>/?_method=patch" method="post">
+    <div class="input-field">
+      <i>👤</i>
+      <input type="text" placeholder="<%=user.username%>" name="username" required>
+    </div>
+
+    <div class="input-field">
+      <i>🔒</i>
+      <input type="password" placeholder="password" name="password">
+    </div>
+
+    <button class="btn" type="submit">edit user</button>
+
+  </form>
+</div>
+</body>
+</html>
