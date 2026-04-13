@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheet/deleteUser.css">
+</head>
+<body>
+    <div class="login-container">
+    
+
+    <p>Are you sure you want to delete <%=user.email%></p>
+
+    <div class="user-info">
+        <p class="username" name="username"><%=user.name%></p>
+        <p class="email" name=""><%=user.email%></p>
+    </div>
+
+    <form method="post" action="/user/<%=user.id%>?_method=delete"  >
+        <input type="password" name="password" placeholder="enter your password">
+        <button class="delete-btn">Delete User</button>
+    </form>
+
+</div>
+</body>
+</html>
