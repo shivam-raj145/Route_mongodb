@@ -3,8 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config();
 const path = require("path");
-const Student=require("./models/student.js");
-const methodOverride=require("method-override");
+const Student = require("./models/student.js");
+const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -28,30 +28,38 @@ app.get("/", (req, res) => {
 });
 
 app.get("/user", async (req, res) => {
-   const users = await Student.find();
+  const users = await Student.find();
   //  console.log(users);
-   res.render("index.ejs",{users});
+  res.render("index.ejs", { users });
 });
 
 // editing route
 
-app.get("/user/:id/edit",async(req,res)=>{
-  let {id}=req.params;
-  const [user]=await Student.find({_id:id});
+app.get("/user/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  const [user] = await Student.find({ _id: id });
   // console.log(user)
-  
-  res.render("edit.ejs",{user});
+
+  res.render("edit.ejs", { user });
 });
-app.patch("/user/:id", async (req,res)=>{
-  const {id}=req.params;
+app.patch("/user/:id", async (req, res) => {
+  const { id } = req.params;
   console.log(id);
-  let{username,password}=req.body;
-  const [user]= await Student.find({_id:id});
-  if(user.password==password){
-    await Student.updateOne({_id:id},{name:username});
+  let { username, password } = req.body;
+  const [user] = await Student.find({ _id: id });
+  if (user.password == password) {
+    await Student.updateOne({ _id: id }, { name: username });
     res.redirect("/user");
   }
-  else{ res.render("wrongPassword.ejs",{user}); }
+  else { res.render("wrongPassword.ejs", { user }); }
+})
+
+// deleting route 
+app.get("/user/:id/delete", async (req, res) => {
+  let { id } = req.params;
+
+  const [user] = await Student.find({ _id: id });
+  res.render("deleteUser.ejs", { user })
 })
 
 const port = process.env.PORT || 8080;
